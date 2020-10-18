@@ -4,7 +4,7 @@ Vue.use(vuex)
 
 const store = new vuex.Store({
     state: {
-        cate: ["運動","情趣","垃圾","運動","情趣","垃圾","運動","情趣"],
+        cate: ["MOBILE PHONES","DESKTOP","LAPTOP","ACCESSORIES","SOFTWARE","SPORTS & FITNESS","FOOTWEAR","JEWELLERY","CLOTHING","HOME DECOR & KITCHEN","BEAUTY & HEALTHCARE"],
         carousel: [],
         cart: []
     },

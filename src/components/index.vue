@@ -4,7 +4,8 @@
       <div class="list-box">
         <div class="list-header">目錄</div>
         <div class="list-content b-bottom" v-for="item in cate" :key="item">
-          {{ item }}
+          <i class="fas fa-caret-right" style="margin-right:.5rem"/>
+          <div>{{ item }}</div>
         </div>
       </div>
       <div class="carousel-box">
@@ -46,24 +47,33 @@ export default {
   grid-gap: 10px;
   padding: 1rem 0;
 }
-.list-box {
-  border: 0.5px solid #aaa;
+.list {
+  &-box {
+    border: 0.5px solid #aaa;
+  }
+  &-header {
+    background: #b81d22;
+    color: #fff;
+    padding: 0.75rem 0.5rem;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 10px;
+    color: #888;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
-.list-header {
-  background: #b81d22;
-  color: #fff;
-  padding: 0.75rem 0.5rem;
-}
-.list-content {
-  padding: 0.75rem 1rem;
-}
-.shop-header{
-  padding:1rem .75rem;
+.shop-header {
+  padding: 1rem 0.75rem;
   width: 100%;
   font-weight: 400;
-  font-size: 2rem;  
-  border-radius: .75rem;
-  border:1px solid #aaa
+  font-size: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #aaa;
 }
 .el-carousel__item h3 {
   color: #475669;
