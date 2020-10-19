@@ -3,10 +3,8 @@
 </template>
 
 <script>
-export default {
-  name: "About",
-};
+export default {};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 </style>

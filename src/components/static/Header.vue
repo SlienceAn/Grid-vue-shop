@@ -55,7 +55,7 @@ export default {
       pageRouter: [
         { path: "/", text: "首頁" },
         { path: "/About", text: "關於我們" },
-        { path: "/New", text: "最新消息" },
+        { path: "/New", text: "消息牆" },
       ],
     };
   },
@@ -92,8 +92,10 @@ $routerNav-color: #333;
     color: red;
     cursor: pointer;
   }
-  &::after {
+  &:nth-child(2)::after,
+  &:nth-child(2)::before {
     content: "|";
+    margin: .5rem;
   }
 }
 .routerLink {
