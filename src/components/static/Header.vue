@@ -15,7 +15,7 @@
       <div class="container" style="padding: 0.5rem">
         <div class="logo-box">
           <img
-            src="../../assets/logo.png"
+            :src="logoImg"
             alt="logo_missing"
             style="width: 10%"
           />
@@ -57,6 +57,7 @@ export default {
         { path: "/About", text: "關於我們" },
         { path: "/New", text: "消息牆" },
       ],
+      logoImg:require('../../assets/logo.png')
     };
   },
 };
