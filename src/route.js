@@ -1,22 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import index from './components/index.vue'
-import About from './components/About.vue'
 import New from './components/New.vue'
+import Contact from './components/Contact.vue'
+import About from './components/About.vue'
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes: [
         {
             path: '/',
+            component: New
+        },
+        {
+            path: '/contact',
+            component: Contact
+        },
+        {
+            path: '/production',
             component: index
         },
         {
-            path: '/About',
+            path: '/about',
             component: About
-        },
-        {
-            path: '/New',
-            component: New
         }
     ]
 })

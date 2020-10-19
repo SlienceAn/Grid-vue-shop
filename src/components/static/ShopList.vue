@@ -1,11 +1,24 @@
 <template>
-  <div class="box">
-    <div class="card" v-for="item in shopRes" :key="item.shopImg">
-      <div class="card-img" alt="missing" :style="`background-image:url(${item.shopImg})`"/>
-      <div class="card-title">{{ item.title.substring(0, 120) }}...</div>
-      <div class="card-footer">
-        <span>${{ item.price }}</span>
-        <button class="card-btn">加入購物車</button>
+  <div>
+    <div
+      class="loading"
+      v-loading="loading"
+      element-loading-text="商品讀取中"
+      element-loading-spinner="el-icon-loading"
+      v-show="loading"
+    />
+    <div class="box" v-show="!loading">
+      <div class="card" v-for="item in shopRes" :key="item.shopImg">
+        <div
+          class="card-img"
+          alt="missing"
+          :style="`background-image:url(${item.shopImg})`"
+        />
+        <div class="card-title">{{ item.title.substring(0, 120) }}...</div>
+        <div class="card-footer">
+          <span>${{ item.price }}</span>
+          <button class="card-btn">加入購物車</button>
+        </div>
       </div>
     </div>
   </div>
@@ -17,6 +30,7 @@ export default {
   data() {
     return {
       shopRes: "",
+      loading: true,
     };
   },
   mounted() {
@@ -24,7 +38,7 @@ export default {
       .get("https://silence-react-travel-api.herokuapp.com/vue/shop")
       .then((res) => {
         this.shopRes = res.data;
-        console.log(this.shopRes);
+        this.loading = false;
       })
       .catch((err) => {
         console.log(err);
@@ -40,9 +54,8 @@ export default {
   display: grid;
   padding: 1rem 0;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap:2%;
+  column-gap: 2%;
   row-gap: 25px;
-
 }
 .card {
   border: 1px solid #aaa;
@@ -57,7 +70,7 @@ export default {
     "footer";
   &-img {
     width: 100%;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -89,5 +102,10 @@ export default {
       border: none;
     }
   }
+}
+.loading {
+  min-height: 20vh;
+  margin: 2rem auto;
+  border-radius: 1rem;
 }
 </style>

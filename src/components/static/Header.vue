@@ -14,11 +14,7 @@
       </div>
       <div class="container" style="padding: 0.5rem">
         <div class="logo-box">
-          <img
-            :src="logoImg"
-            alt="logo_missing"
-            style="width: 10%"
-          />
+          <img :src="logoImg" alt="logo_missing" style="width: 10%" />
           <span style="font-size: 25px">Grid-Vue-shop</span>
         </div>
         <div class="logo-text">
@@ -54,10 +50,11 @@ export default {
       pageLink: ["Register", "Login", "My Account"],
       pageRouter: [
         { path: "/", text: "首頁" },
-        { path: "/About", text: "關於我們" },
-        { path: "/New", text: "消息牆" },
+        { path: "/production", text: "商品列表" },
+        { path: "/about", text: "關於我們" },
+        { path: "/contact", text: "聯絡我們" },
       ],
-      logoImg:require('../../assets/logo.png')
+      logoImg: require("../../assets/logo.png"),
     };
   },
 };
@@ -96,7 +93,7 @@ $routerNav-color: #333;
   &:nth-child(2)::after,
   &:nth-child(2)::before {
     content: "|";
-    margin: .5rem;
+    margin: 0.5rem;
   }
 }
 .routerLink {
@@ -109,6 +106,9 @@ $routerNav-color: #333;
     cursor: pointer;
     background: #b81d22;
   }
+}
+.router-link-exact-active {
+  background: #b81d22;
 }
 .search-form {
   display: flex;
